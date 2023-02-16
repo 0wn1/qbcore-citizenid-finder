@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QBCore: Citizen ID Finder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #36454F;
+		color: #fff;
+      }
+      #container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #36454F;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      label {
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <form method="post" action="citizenid.php">
+        <label for="citizenid">Citizen ID:</label>
+        <input type="text" id="citizenid" name="citizenid">
+        <input type="submit" value="Submit">
+      </form>
+	  </div>
+	  </body>
+</html>
