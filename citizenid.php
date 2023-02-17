@@ -15,7 +15,7 @@
   
   $citizenid = $_POST["citizenid"];
   
-  $sql = "SELECT p.id, p.citizenid, p.license, p.name, p.money, p.job, p.gang, p.position, p.metadata, p.inventory, p.last_updated, 
+  $sql = "SELECT p.id, p.citizenid, p.license, p.name, p.money, p.charinfo, p.job, p.gang, p.position, p.metadata, p.inventory,
           GROUP_CONCAT(DISTINCT CONCAT('{\"', pv.vehicle, '\":\"', pv.plate, '\"}') SEPARATOR ',') AS vehicles 
           FROM players p 
           LEFT JOIN player_vehicles pv ON p.citizenid = pv.citizenid 
@@ -35,12 +35,12 @@
       "License" => $row["license"],
       "Name" => $row["name"],
       "Money" => json_decode($row["money"]),
+	  "Character Info" => json_decode($row["charinfo"]),
       "Job" => json_decode($row["job"]),
       "Gang" => json_decode($row["gang"]),
       "Position" => json_decode($row["position"]),
       "Metadata" => json_decode($row["metadata"]),
       "Inventory" => json_decode($row["inventory"]),
-      "Last Updated" => $row["last_updated"],
       "Vehicles" => json_decode("[{$row['vehicles']}]")
     );
 
